@@ -1,0 +1,48 @@
+//portfolio.js
+
+//These functions open and close the contact form
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+//This function displays the first image in the slideshow when the page loads
+var slideIndex = 1;
+showSlides(slideIndex);
+
+//This function changes the slide when the left or right arrows are clicked
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+//This function changes the slide when the dots are clicked
+function currentSlides(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var slides = document.getElementsByClassName("mySlides"); //This takes all elements withthe class name "mySlides" and stores them in the variable array "slides".
+    var dots = document.getElementsByClassName("dot"); //This takes all elements with the class name "dot" and stores them in the variable array "dots".
+    if (n > slides.length) { slideIndex = 1 }; //If n (the number passed into the function) is greater than the legth of the array "slides", the slideIndex is set to 1.
+    if (n < 1) { slideIndex = slides.length }; //If n is less than 1, the slideIndex is set to the length of the array "slides".
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; //This for loop takes each item in the array "slides" and sets the display to none.
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", ""); //This for loop takes each item in the array "dots" and replaces the class name "active" with an empty string.
+    }
+    slides[slideIndex - 1].style.display = "block"; //This sets the display of the current slide to "block".
+    dots[slideIndex - 1].className += " active"; //This adds the class name "active" to the current dot.
+}
+
+//This code will create close the contact form when the user clicks off of it 
+//The first step is to add an event listener for any click on the website
+document.addEventListener("click", function (event) {
+    //Here we state that if th click happens on the cancel button OR anywhere that is not th contact form AND the click does not happen on any element with th econtact class then call the closeForm() function.
+    if (event.target.matches(".cancel") || !event.target.closest(".form-popup") && !event.target.closest(".Pop_Up_Button") && !event.target.closest(".contact")) {
+        closeForm();
+    }
+}, false)

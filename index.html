@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Brian Healy's Portfolio</title>
+    <link rel="shortcut icon" type="img/jpg" href="images/coding_icon.png">
+    <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
+</head>
+
+<body class="Background">
+
+    <!--Navbar-->
+    <div class="Navbar">
+        <a class="active" href="#Home">Home</a>
+        <a href="#Slideshow">Slideshow</a>
+        <a href="#About">About</a>
+        <a href="#GitHub">GitHub</a>
+        <!--Onclick and ondblclick functions added to open and close the contact form-->
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
+    </div>
+
+    <!--Background Video-->
+    <div id="Home">
+        <video autoplay muted loop id="Coding_Video">
+            <source src="images/video/Coding.mp4" type="video/mp4">
+            <!--Display message if video fails to run-->
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    </div>
+
+    <!--Video Text-->
+    <div class="Video_Text">
+        <h1 class="white-text">Brian Healy's Portfolio</h1>
+        <strong>
+            <p class="center">
+                <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                    <br>No playwright, no stage dirextor, no emperor, however powerful, has ever exercised such absolute
+                    authority to arrange a stage or
+                    <br>field of battle and to command such unswervingly dutiful actors or troops.
+                </q>
+                <br> -Joseph Weizenbaum
+                <br>
+                <br> My name is Brian Healy. Welcome to my portfolio website. On it, I will be showcasing my projects,
+                skills and experience as a software developer.
+                <br>
+                <br> Thank you for stopping by and I hope you enjoy exploring my work!
+            </p>
+        </strong>
+    </div>
+
+    <!--Slideshow Section-->
+    <div id="Slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+                <!--Slide 1 of 4-->
+                <div class="mySlides">
+                    <img class="Slideshow_Images" src="images/Personal_Photo.jpeg" alt="Picture of myself">
+                    <div class="text">Pleasure to make your acquintance!</div>
+                </div>
+                <!--Slide 2 of 4-->
+                <div class="mySlides">
+                    <img class="Slideshow_Images" src="images/HTML_CSS_and_JavaScript.jpeg"
+                        alt="HTML, CSS, and JS logos">
+                    <div class="text">I am a full-stack software developer,<br>trained in:<br>HTML, CSS, and JavaScript
+                    </div>
+                </div>
+                <!--Slide 3 of 4-->
+                <div class="mySlides">
+                    <img class="Slideshow_Images" src="images/Python.png" alt="Python Logo">
+                    <div class="text">I am also proficient in Python</div>
+                </div>
+                <!--Slide 4 of 4-->
+                <div class="mySlides">
+                    <img class="Slideshow_Images" src="images/Contact.jpg" alt="Contact">
+                    <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                </div>
+                <!--Previous and next buttons-->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br> <!--Adds a spce between the slideshow images and the dots-->
+
+            <!--Slideshow dots (these are another way for users to navigate through the slideshow)-->
+            <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </div>
+
+    <!--About Section-->
+    <div class="Row" id="About">
+        <!--Left Column-->
+        <div class="Column_2">
+            <img src="images/Hello.jpg" alt="Hello Image">
+        </div>
+        <!--Right Column-->
+        <div class="Column_1">
+            <h1>About</h1>
+            <p>
+                I am a software developer with experience in various programming languages and
+                technologies.
+                <br>I am a graduate of <a href="https://www.pitman-training.ie" target="_blank">Pitman
+                    Training</a>
+                Software Developer Bootcamp, where I gained hands-on experience in full-stack
+                development.
+                <br>
+                <br> I am passionate about creating efficient and user-friendly applications that solve
+                real-world
+                problems. I am always eager to learn new technologies and improve my skills as a
+                developer.
+                <br>
+                <br>
+                Here is a link to my <a href="https://www.linkedin.com/in/brian-healy-398aa6364/"
+                    target="blank">LinkedIn Profile</a>
+            </p>
+        </div>
+    </div>
+
+    <!--GitHub Section-->
+    <div class="Row" id="GitHub">
+        <!--Left Column-->
+        <div class="Column_1">
+            <h1>Github</h1>
+            <p>
+                You can view my coding projects on my Github profile here:
+                <br>
+            <p class="center"><a href="https://github.com/Healy96" target="_blank">My GitHub
+                    Profile</a></p>
+            </p>
+        </div>
+        <!--Right Column-->
+        <div class="Column_2">
+            <a href="https://github.com/Healy96" target="_blank"><img src="images/GitHub.png" alt="GitHub Logo"></a>
+        </div>
+    </div>
+
+    <!--Contact Form-->
+    <div id="Contact">
+        <button onclick="openForm()" class="Pop_Up_Button">Contact</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/brianhealy6596@gmail.com" method="POST" class="form-container">
+                <h1>Contact</h1>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Type your name here" name="name" required>
+                <label for="phone"><b>Phone</b></label>
+                <input type="text" placeholder="Type your phone number here" name="phone">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Type your email address here" name="email" required>
+                <label for="message"><b>Message</b></label>
+                <input type="text" placeholder="Type your message here" name="message">
+
+                <button type="submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Footer Section-->
+    <footer>
+        <p>
+        <p class="center">&copy; 2026 Brian Healy. <a href="https://github.com/Healy96" target="_blank">My
+                GitHub
+                Profile</a></p>
+        <br>
+        </p>
+    </footer>
+    <script src="js/portfolio.js"></script>
+</body>
+
+</html>
